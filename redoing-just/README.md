@@ -1,12 +1,12 @@
-# 1 - Re-doing Just
+# Re-doing Just
 
-Recently, I stumbled across the [Just](https://github.com/angus-c/just) library, an amazing and small JavaScript utility library.
+Recently, I stumbled across [Just](https://github.com/angus-c/just), an amazing and small JavaScript utility library.
 
 ## The experiment
 
-The **challenge** I'm giving myself here is to implement some of the Just utilities, without looking at the original source code. The goal here is to improve my capacity to write efficient **algorithms**.
+The **challenge** I'm giving myself here is to implement some of the `Just` utilities, without looking at the original source code. The goal here is to improve my capacity to write efficient **algorithms**.
 
-⚠️ I'm not willing to do `Just` better that it already is. I'm doing it my own way. ⚠️
+⚠️ I'm not willing to do `Just` better that it already is. I'm willing to do it my own way. ⚠️
 
 ## TODO
 
