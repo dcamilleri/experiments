@@ -8,3 +8,4 @@ _But that's what **experimenting** is all about right ? :)_
 # Experiments
 
 1 – [Re-doing the Just library](https://github.com/dcamilleri/experiments/tree/master/redoing-just)
+2 – [Model Validator](https://github.com/dcamilleri/experiments/tree/master/model-validator)
