@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "babel-jest": "^19.0.0",
+    "babel-preset-es2015": "^6.22.0",
+    "flat": "^2.0.1",
+    "jest": "^19.0.2",
+    "lodash": "^4.17.4",
+    "regenerator-runtime": "^0.10.3"
+  },
+  "name": "object-flatten",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Dorian CAMILLERI <dorian@dcamilleri.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  }
+}
