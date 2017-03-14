@@ -10,10 +10,8 @@ const simpleObject = {
 const nestedObject = {
   foo: 'bar',
   bar: {
-    baz: () => {
-      return 'baz'
-    },
-    ['Internet is cool']: true
+    baz: 'baz',
+    'Internet is cool': true
   },
   nested: {
     john: {
@@ -25,12 +23,10 @@ const nestedObject = {
 
 const nestedObjectExpected = {
   foo: 'bar',
-  ['bar.baz']: function baz() {
-    return 'baz'
-  },
-  ['bar.Internet is cool']: true,
-  ['nested.john.doe']: [4, 5, 6],
-  ['nested.jane']: 'doe'
+  'bar.baz': 'baz',
+  'bar.Internet is cool': true,
+  'nested.john.doe': [4, 5, 6],
+  'nested.jane': 'doe'
 }
 
 describe('Object flattening', () => {
@@ -54,8 +50,9 @@ describe('Object flattening', () => {
     expect(_.isEqual(flattenedObject, nestedObjectExpected)).toBeTruthy()
   })
 
-  it('should work the same way as the `flat` npm module', () => {
-    const flattenedObject = flattenObject(nestedObject)
+  it('should work the same way as the `flat` npm module with the flattenArrays option', () => {
+    const flattenOptions = { flattenArrays: true }
+    const flattenedObject = flattenObject(nestedObject, flattenOptions)
 
     expect(_.isEqual(flattenedObject, flat(nestedObject))).toBeTruthy()
   })

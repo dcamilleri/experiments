@@ -1,34 +1,42 @@
 function isObject (input) {
-	return input !== null && !Array.isArray(input) && typeof input === 'object'
+  return input !== null && !Array.isArray(input) && typeof input === 'object'
 }
 
-function buildAccessorKey(prefix, key) {
-	return `${prefix}.${key}`
+function buildAccessorKey (prefix, key) {
+  return `${prefix}.${key}`
 }
 
-export default function flattenObject(object) {
+export default function flattenObject (object, { flattenArrays } = {}) {
   if (!isObject(object)) {
     throw Error(`${object} should be an object`)
   }
 
   let result = {}
 
-  function recursiveFlatten(obj, keyPrefix = null) {
-	  const keys = Object.keys(obj)
+  function recursiveFlatten (obj, keyPrefix = null) {
+    const keys = Object.keys(obj)
 
-	  for (let i = 0; i < keys.length; i++) {
-	  	const keyName = keys[i]
-	  	const value = obj[keyName]
+    for (let i = 0; i < keys.length; i++) {
+      const keyName = keys[i]
+      const value = obj[keyName]
+      const accessorKey = keyPrefix ? buildAccessorKey(keyPrefix, keyName) : keyName
 
-	  	if (isObject(value)) {
-  			recursiveFlatten(value, keyPrefix ? buildAccessorKey(keyPrefix, keyName) : keyName)
-  			continue
-	  	}
+      if (flattenArrays && Array.isArray(value)) {
+        for (let j = 0; j < value.length; j++) {
+          const arrayValue = value[j]
+          result[`${accessorKey}.${j}`] = arrayValue
+        }
 
-	  	const accessorKey = keyPrefix ? buildAccessorKey(keyPrefix, keyName) : keyName
+        continue
+      }
 
-	  	result[accessorKey] = value
-	  }
+      if (isObject(value)) {
+        recursiveFlatten(value, accessorKey)
+        continue
+      }
+
+      result[accessorKey] = value
+    }
   }
 
   recursiveFlatten(object)

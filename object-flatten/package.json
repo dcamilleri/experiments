@@ -5,7 +5,8 @@
     "flat": "^2.0.1",
     "jest": "^19.0.2",
     "lodash": "^4.17.4",
-    "regenerator-runtime": "^0.10.3"
+    "regenerator-runtime": "^0.10.3",
+    "standard": "^9.0.1"
   },
   "name": "object-flatten",
   "version": "1.0.0",
@@ -13,6 +14,14 @@
   "author": "Dorian CAMILLERI <dorian@dcamilleri.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "standard --fix"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "it",
+      "expect"
+    ]
   }
 }
