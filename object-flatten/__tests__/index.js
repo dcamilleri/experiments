@@ -30,6 +30,10 @@ const nestedObjectExpected = {
 }
 
 describe('Object flattening', () => {
+  it('should throw if no arguments are passed to the function', () => {
+    expect(() => flattenObject()).toThrow()
+  })
+
   it('should throw if the argument is not an object', () => {
     expect(() => flattenObject('foo')).toThrow()
     expect(() => flattenObject([])).toThrow()
