@@ -13,24 +13,24 @@ const nestedObject = {
     baz: () => {
       return 'baz'
     },
-    ['Interet is cool']: true
+    ['Internet is cool']: true
   },
   nested: {
-    'john': {
-      'doe': [4, 5, 6]
+    john: {
+      doe: [4, 5, 6]
     },
-    'jane': 'doe'
+    jane: 'doe'
   }
 }
 
 const nestedObjectExpected = {
   foo: 'bar',
-  ['bar.baz']: () => {
+  ['bar.baz']: function baz() {
     return 'baz'
   },
-  ['bar.Interet is cool']: true,
-  ['bar.nested.john.doe']: [4, 5, 6],
-  ['bar.nested.jane']: 'doe'
+  ['bar.Internet is cool']: true,
+  ['nested.john.doe']: [4, 5, 6],
+  ['nested.jane']: 'doe'
 }
 
 describe('Object flattening', () => {
