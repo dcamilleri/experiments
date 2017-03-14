@@ -7,7 +7,7 @@ function buildAccessorKey (prefix, key) {
 }
 
 export default function flattenObject (object, { flattenArrays } = {}) {
-  if (!isObject(object)) {
+  if (!object) {
     throw Error(`flattenObject takes at least two arguments: object:Object and options:Object`)
   }
 
