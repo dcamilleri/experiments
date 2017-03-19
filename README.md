@@ -30,3 +30,11 @@ How hard is it to create an Immutable object or array with JavaScript ? Are ther
 
 **Goals:**
 Make different versions of an immutable library. I can use Object Proxies, but maybe this is also possible using ES5.
+
+- Implement something with Web Workers
+
+**Question I want to solve:**
+How do Web Workers fit in a real-world app ? What problems can they solve ?
+
+**Goals:**
+Use and understand the Web Worker API. Also, benchmark performance with and without WWs.
