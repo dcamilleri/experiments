@@ -4,19 +4,19 @@ function isObject (input) {
   return input !== null && !Array.isArray(input) && typeof input === 'object'
 }
 
-function mergeFlattenedObjects (obj1, obj2, prefix) {
-  const keys = Object.keys(obj2)
+function mergeFlattenedObjects (flatObj1, flatObj2, prefix) {
+  const keys = Object.keys(flatObj2)
 
   for (var i = 0; i < keys.length; i++) {
     const key = keys[i]
-    const value = obj2[key]
+    const value = flatObj2[key]
 
     const finalKey = prefix ? `${prefix}.${key}` : key
 
-    obj1[finalKey] = value
+    flatObj1[finalKey] = value
   }
 
-  return Object.assign({}, obj1)
+  return Object.assign({}, flatObj1)
 }
 
 // Private stuff will be declared here as WeakMaps
@@ -34,8 +34,6 @@ export default class FlatObject {
     if (!isObject(object)) {
       throw TypeError(`${object} should be an object`)
     }
-
-    this.flattenOptions = flattenOptions
 
     const flattenedObject = flattenObject(object, flattenOptions)
 

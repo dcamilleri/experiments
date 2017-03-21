@@ -25,21 +25,6 @@ describe('Flat object: parameters handling', () => {
   it('should throw if the argument is not an object', () => {
     expect(() => new FlatObject('hey')).toThrow()
   })
-
-  it('should be able to retrieve the flattened object via getFlattened', () => {
-    const flatObject = new FlatObject(testObject)
-
-    const flattenedObject = flatObject.getFlattened()
-
-    expect(_.isEqual(flattenedObject, testObjectFlattened)).toBeTruthy()
-  })
-
-  it('should return a copy of the private flattened object via getFlattened', () => {
-    const flatObject = new FlatObject(testObject)
-    const flattenedObject = flatObject.getFlattened()
-
-    expect(_.isEqual(flattenedObject, testObjectFlattened)).toBeTruthy()
-  })
 })
 
 describe('Flat object: get()', () => {
@@ -81,11 +66,46 @@ describe('Flat object: set()', () => {
     const flatObject = new FlatObject(testObject)
     const newNameObject = {
       foo: 'bar',
-      hey: 'you'
+      hey: {
+        you: 'yolo'
+      }
     }
 
     flatObject.set('nested.john.doe.name', newNameObject)
 
-    expect(flatObject.get('nested.john.doe.name.foo')).toEqual('bar')
+    expect(flatObject.get('nested.john.doe.name.foo')).toEqual(newNameObject.foo)
+    expect(flatObject.get('nested.john.doe.name.hey.you')).toEqual(newNameObject.hey.you)
+  })
+})
+
+describe('Flat object: getFlattened()', () => {
+  it('should be able to retrieve the flattened object via getFlattened', () => {
+    const flatObject = new FlatObject(testObject)
+
+    const flattenedObject = flatObject.getFlattened()
+
+    expect(_.isEqual(flattenedObject, testObjectFlattened)).toBeTruthy()
+  })
+
+  it('should return a copy of the private flattened object via getFlattened', () => {
+    const flatObject = new FlatObject(testObject)
+    const flattenedObject = flatObject.getFlattened()
+
+    expect(_.isEqual(flattenedObject, testObjectFlattened)).toBeTruthy()
+  })
+})
+
+describe('Flat object: multiple instances', () => {
+  it('should by able to create multiple instances of FlatObjects', () => {
+    const flatObject1 = new FlatObject(testObject)
+    const object2 = {
+      hey: {
+        you: 'whaddup'
+      }
+    }
+    const flatObject2 = new FlatObject(object2)
+
+    expect(_.isEqual(flatObject1.getFlattened(), testObjectFlattened)).toBeTruthy()
+    expect(_.isEqual(flatObject2.getFlattened(), flattenObject(object2))).toBeTruthy()
   })
 })
