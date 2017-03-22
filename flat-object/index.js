@@ -35,6 +35,8 @@ export default class FlatObject {
       throw TypeError(`${object} should be an object`)
     }
 
+    this.flattenOptions = flattenOptions
+
     const flattenedObject = flattenObject(object, flattenOptions)
 
     _data.set(this, flattenedObject)
@@ -49,7 +51,8 @@ export default class FlatObject {
     let data = _data.get(this)
 
     if (isObject(value)) {
-      data = mergeFlattenedObjects(data, flattenObject(value), key)
+      const newFlattenedObject = flattenObject(value, this.flattenOptions)
+      data = mergeFlattenedObjects(data, newFlattenedObject, key)
     } else {
       data[key] = value
     }

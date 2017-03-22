@@ -93,6 +93,29 @@ describe('Flat object: getFlattened()', () => {
 
     expect(_.isEqual(flattenedObject, testObjectFlattened)).toBeTruthy()
   })
+
+  it('should return a copy of the new flattened object after setting new values', () => {
+    const flatObject = new FlatObject(testObject)
+    const expected = Object.assign({}, testObjectFlattened, {
+      'in.ter.net': 'hey',
+      'you': 'ho',
+      'a.b.c.d.e.f': 'g'
+    })
+
+    flatObject.set('in.ter.net', 'hey')
+    flatObject.set('you', 'ho')
+    flatObject.set('a.b.c', {
+      d: {
+        e: {
+          f: 'g'
+        }
+      }
+    })
+
+    const flattenedObject = flatObject.getFlattened()
+
+    expect(_.isEqual(flattenedObject, expected)).toBeTruthy()
+  })
 })
 
 describe('Flat object: multiple instances', () => {
