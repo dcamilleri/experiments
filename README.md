@@ -14,7 +14,15 @@ _But that's what **experimenting** is all about right ? :)_
 
 # Ideas 💡
 
-- Create a small tool to benchmark multiple functions together and analyze their performance
+### Implement snapshot testing for pure functions
+
+**Question I want to solve:**
+Can Jest snapshot testing be applied to pure functions ? Can it speed up our tests ?
+
+**Goals:**
+Play around with Jest and pure functions
+
+### Create a small tool to benchmark multiple functions together and analyze their performance
 
 **Question I want to solve:**
 I have two implementations of the same algorithm. How can I know which one is faster ? Also, how can I easily benchmark 1000 iterations of these two algorithms ?
@@ -22,20 +30,13 @@ I have two implementations of the same algorithm. How can I know which one is fa
 **Goals:**
 Improve node.js + benchmarking + tests skills
 
-- Experiment something with Proxies and Generators
+### Experiment something with Proxies and Generators
 
-- Create a small immutability library (Maps and Lists)
-
-**Question I want to solve:**
-How hard is it to create an Immutable object or array with JavaScript ? Are there different approaches ?
-
-**Goals:**
-Make different versions of an immutable library. I can use Object Proxies, but maybe this is also possible using ES5.
-
-- Implement something with Web Workers
+### Implement something with Web Workers
 
 **Question I want to solve:**
 How do Web Workers fit in a real-world app ? What problems can they solve ?
 
 **Goals:**
 Use and understand the Web Worker API. Also, benchmark performance with and without WWs.
+
