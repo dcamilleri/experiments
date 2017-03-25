@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomForm should render correctly all props 1`] = `
+<div
+  className="CustomForm"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="Input-ctn"
+    >
+      <label
+        htmlFor="foo"
+      >
+        foo
+      </label>
+      <input
+        className="Input foo"
+        name="foo"
+        placeholder="foo"
+        type="text"
+      />
+    </div>
+  </form>
+</div>
+`;
+
+exports[`CustomForm should render correctly with inputs 1`] = `
+<div
+  className="CustomForm"
+>
+  <form
+    onSubmit={undefined}
+  >
+    <div
+      className="Input-ctn"
+    >
+      <label
+        htmlFor="foo"
+      >
+        foo
+      </label>
+      <input
+        className="Input foo"
+        name="foo"
+        placeholder="foo"
+        type="text"
+      />
+    </div>
+  </form>
+</div>
+`;
+
+exports[`CustomForm should render correctly with onSubmit 1`] = `
+<div
+  className="CustomForm"
+>
+  <form
+    onSubmit={[Function]}
+  />
+</div>
+`;
+
+exports[`CustomForm should render correctly without any props 1`] = `
+<div
+  className="CustomForm"
+>
+  <form
+    onSubmit={undefined}
+  />
+</div>
+`;
