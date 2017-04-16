@@ -63,16 +63,4 @@ describe('ImmutMap', () => {
     expect(newFirstname).toEqual('Jane')
     expect(newFirstname).not.toEqual(exampleObject.firstname)
   })
-
-  // it('should be able to access properties of an Immut object', () => {
-  //   const immutObject = new Immut(exampleObject)
-
-  //   expect(() => immutObject.address.city).not.toThrow()
-  //   expect(immutObject.address.city).toEqual(exampleObject.address.city)
-  // })
-
-  // it('should throw when we try to mutate properties of an Immut object', () => {
-  //   const immutObject = new Immut(exampleObject)
-  //   expect(() => {immutObject.address = 3}).toThrow()
-  // })
 })

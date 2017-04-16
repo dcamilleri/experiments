@@ -11,6 +11,8 @@ _But that's what **experimenting** is all about right ? :)_
 ### 2 – [Model Validator](https://github.com/dcamilleri/experiments/tree/master/2-model-validator)
 ### 3 – [Object Flatten](https://github.com/dcamilleri/experiments/tree/master/3-object-flatten)
 ### 4 – [Flat Object Class](https://github.com/dcamilleri/experiments/tree/master/4-flat-object)
+### 5 – [Small Immutable Library](https://github.com/dcamilleri/experiments/tree/master/5-immutable-lib)
+### 6 – [Experimenting Jest Snapshots](https://github.com/dcamilleri/experiments/tree/master/6-jest-snapshot)
 
 # Ideas 💡
 
