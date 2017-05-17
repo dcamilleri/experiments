@@ -16,6 +16,25 @@ _But that's what **experimenting** is all about right ? :)_
 
 # Ideas 💡
 
+### Learn new languages
+
+**What I want to do:**
+Create a simple web app (server-side rendered), or just an API, using multiple languages.
+
+**Languages I would like to be better at:**
+- ➡️  Java
+- ➡️  Python
+- ➡️  Go
+- ➡️  PHP
+
+**Languages I would like to discover:**
+- ➡️  Elm
+- ➡️  Elixir/Erlang
+- ➡️  OCaml
+
+**Goals:**
+Learn new things. Explore new/old programming principles. Open my mind to something else than JavaScript 🙌
+
 ### Implement snapshot testing for pure functions
 
 **Question I want to solve:**
